@@ -1,0 +1,702 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3CDBF5E8-EB8E-4797-8978-31F5645933A4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FitnessApp</RootNamespace>
+    <AssemblyName>FitnessApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CaloriesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaloriesForm.Designer.cs">
+      <DependentUpon>CaloriesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExercisesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExercisesForm.Designer.cs">
+      <DependentUpon>ExercisesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoghinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoghinForm.Designer.cs">
+      <DependentUpon>LoghinForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfileForm.Designer.cs">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkoutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WorkoutForm.Designer.cs">
+      <DependentUpon>WorkoutForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ExercisesForm.resx">
+      <DependentUpon>ExercisesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="WorkoutForm.resx">
+      <DependentUpon>WorkoutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Incline_Bench_Sit_ups_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Incline_Bench_Sit_ups_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Incline_Bench_Sit_ups_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hanging_Leg_Raises_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hanging_Leg_Raises_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hanging_Leg_Raises_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crunches_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crunches_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crunches_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leg_Raises_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leg_Raises_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leg_Raises_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seated_Jackknife_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seated_Jackknife_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seated_Jackknife_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Twisting_Hip_Raise_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Twisting_Hip_Raise_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Twisting_Hip_Raise_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Core_Twist_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Core_Twist_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Core_Twist_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Core_Twist_4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Side_Bridge_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Side_Bridge_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Side_Bridge_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Superman_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Superman_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Superman_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rotating_T_Extension_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rotating_T_Extension_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rotating_T_Extension_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wrist_Curls_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wrist_Curls_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wrist_Curls_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dumbell_Wrist_Curls_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dumbell_Wrist_Curls_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dumbell_Wrist_Curls_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dumbell_Wrist_Twist_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dumbell_Wrist_Twist_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dumbell_Wrist_Twist_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stanting_Wrist_Curl_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stanting_Wrist_Curl_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stanting_Wrist_Curl_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Curls_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Curls_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Curls_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barbell_Curls_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barbell_Curls_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barbell_Curls_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PreArcher_Curls_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PreArcher_Curls_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PreArcher_Curls_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reverse_Curls_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reverse_Curls_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reverse_Curls_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cable_Biceps_Curls_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cable_Biceps_Curls_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cable_Biceps_Curls_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Low_Pulley_Cable_Crossover_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Low_Pulley_Cable_Crossover_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Low_Pulley_Cable_Crossover_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Concentration_Curls_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Concentration_Curls_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Concentration_Curls_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Squats_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Squats_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Squats_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Angled_Leg_Presses_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Angled_Leg_Presses_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Angled_Leg_Presses_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leg_Extensions_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leg_Extensions_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Leg_Extensions_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hack_Squats_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hack_Squats_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hack_Squats_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cable_Back_Kicks_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cable_Back_Kicks_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cable_Back_Kicks_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Front_Squats_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Front_Squats_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Front_Squats_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Good_Morning_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Good_Morning_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Good_Morning_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seated_Leg_Curls_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seated_Leg_Curls_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seated_Leg_Curls_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Single_Leg_Squat_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Single_Leg_Squat_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Single_Leg_Squat_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Toe_Raises_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Toe_Raises_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Toe_Raises_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seated_Calf_Raises_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seated_Calf_Raises_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Standing_Barbell_Calf_Raise_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Standing_Barbell_Calf_Raise_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dumbbell_Calf_Jump_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dumbbell_Calf_Jump_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bench_Presses_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bench_Presses_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bench_Presses_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Incline_Presses_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Incline_Presses_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Incline_Presses_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parallel_Bar_Dips_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parallel_Bar_Dips_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Parallel_Bar_Dips_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Push_Ups_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Push_Ups_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Push_Ups_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pec_Desk_Flies_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pec_Desk_Flies_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pec_Desk_Flies_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dumbbell_Decline_Bench_Presses_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dumbbell_Decline_Bench_Presses_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dumbbell_Decline_Bench_Presses_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cable_Crossover_Flys_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cable_Crossover_Flys_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cable_Crossover_Flys_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dumbbell_Flys_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dumbbell_Flys_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dumbbell_Flys_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Deadlifts_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Deadlifts_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Deadlifts_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lat_Pull_Downs_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lat_Pull_Downs_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lat_Pull_Downs_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\One_Arm_Dumbbell_Row_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\One_Arm_Dumbbell_Row_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\One_Arm_Dumbbell_Row_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seated_Rows_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seated_Rows_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seated_Rows_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chin_Ups_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chin_Ups_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chin_Ups_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dumbbell_Pullovers_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dumbbell_Pullovers_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dumbbell_Pullovers_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TBar_Bent_Over_Row_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TBar_Bent_Over_Row_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TBar_Bent_Over_Row_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reverse_Chin_Ups_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reverse_Chin_Ups_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reverse_Chin_Ups_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barbell_Shrugs_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barbell_Shrugs_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back_Extensions_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barbell_Shrugs_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back_Extensions_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back_Extensions_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Triceps_Kickbacks_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Triceps_Kickbacks_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Triceps_Kickbacks_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Triceps_Extensions_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Triceps_Extensions_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Triceps_Extensions_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Triceps_Dips_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Triceps_Dips_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Triceps_Dips_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seated_Triceps_Extensions_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seated_Triceps_Extensions_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seated_Triceps_Extensions_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Push_Downs_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Push_Downs_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Push_Downs_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_Grip_Bench_Presse_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_Grip_Bench_Presse_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close_Grip_Bench_Presse_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seated_Dumbbell_Presses_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seated_Dumbbell_Presses_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pec_Deck_Rear_Delt_Laterals_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seated_Dumbbell_Presses_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pec_Deck_Rear_Delt_Laterals_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pec_Deck_Rear_Delt_Laterals_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Low_Pulley_Lateral_Raises_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Low_Pulley_Lateral_Raises_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Front_Weighted_Raises_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Low_Pulley_Lateral_Raises_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Front_Weighted_Raises_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Front_Weighted_Raises_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Front_Raises_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Front_Raises_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back_Presses_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Front_Raises_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back_Presses_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back_Presses_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arnold_Press_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arnold_Press_4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arnold_Press_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Arnold_Press_1.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
